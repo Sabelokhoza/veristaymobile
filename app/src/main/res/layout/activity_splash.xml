@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#0F172A">
+
+  <!-- ── Glow circle behind logo ────────────────────────── -->
+  <FrameLayout
+      android:layout_width="160dp"
+      android:layout_height="160dp"
+      android:layout_marginBottom="24dp">
+
+    <!-- Outer glow ring -->
+    <View
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/splash_glow_outer"
+        android:layout_gravity="center" />
+
+    <!-- Inner circle -->
+    <View
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/splash_glow_inner"
+        android:layout_gravity="center" />
+
+    <!-- Logo letter -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="V"
+        android:textColor="#FFFFFF"
+        android:textSize="52sp"
+        android:textStyle="bold" />
+
+  </FrameLayout>
+
+  <!-- ── App name ───────────────────────────────────────── -->
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="VeriStay"
+      android:textSize="40sp"
+      android:textStyle="bold"
+      android:textColor="#FFFFFF"
+      android:letterSpacing="0.04"
+      android:layout_marginBottom="8dp" />
+
+  <!-- ── Tagline ────────────────────────────────────────── -->
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Verified Student Accommodation"
+      android:textSize="14sp"
+      android:textColor="#93C5FD"
+      android:letterSpacing="0.02"
+      android:layout_marginBottom="60dp" />
+
+  <!-- ── Divider dots ───────────────────────────────────── -->
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginBottom="48dp">
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/dot_active"
+        android:layout_marginEnd="6dp" />
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/dot_inactive"
+        android:layout_marginEnd="6dp" />
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/dot_inactive" />
+
+  </LinearLayout>
+
+  <!-- ── Loading indicator ─────────────────────────────── -->
+  <ProgressBar
+      android:layout_width="36dp"
+      android:layout_height="36dp"
+      android:indeterminateTint="#3B82F6"
+      android:layout_marginBottom="24dp" />
+
+  <!-- ── Loading text ───────────────────────────────────── -->
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Loading your dashboard..."
+      android:textSize="12sp"
+      android:textColor="#475569"
+      android:letterSpacing="0.03" />
+
+  <!-- ── Bottom badge ───────────────────────────────────── -->
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:background="@drawable/splash_badge"
+      android:paddingHorizontal="16dp"
+      android:paddingVertical="8dp"
+      android:layout_marginTop="60dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔒"
+        android:textSize="12sp"
+        android:layout_marginEnd="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Secure · University Verified"
+        android:textSize="11sp"
+        android:textColor="#64748B"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+</LinearLayout>

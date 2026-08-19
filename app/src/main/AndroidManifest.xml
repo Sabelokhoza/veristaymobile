@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VeriStay"
+        android:usesCleartextTraffic="true">
+
+        <!-- Splash / Login -->
+        <activity
+            android:name="SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.VeriStay.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="LoginActivity"
+            android:exported="false" />
+
+        <!-- Main dashboard -->
+        <activity
+            android:name="MainActivity"
+            android:exported="false" />
+
+        <!-- Notification detail -->
+        <activity
+            android:name="NotificationDetailActivity"
+            android:exported="false" />
+
+        <!-- Announcement detail -->
+        <activity
+            android:name="AnnouncementDetailActivity"
+            android:exported="false" />
+
+        <!-- Firebase Messaging Service -->
+        <!-- Comment out the Firebase service in AndroidManifest.xml -->
+
+        <service
+            android:name="VeriStayFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <!-- WorkManager for payment reminders -->
+        <service
+            android:name="PaymentReminderWorker"
+            android:exported="false" />
+
+        <!-- Notification channels meta -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="veristay_main" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/blue_600" />
+
+    </application>
+</manifest>

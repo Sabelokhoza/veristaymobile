@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "505922702910",
+    "project_id": "veristay-e83d8",
+    "storage_bucket": "veristay-e83d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505922702910:android:703945c3bfee5186b88b6f",
+        "android_client_info": {
+          "package_name": "com.veristay.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9F7g_JEWEuVjTBfQD9L78ZxXVVOaINO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505922702910:android:23a6a5efb100c095b88b6f",
+        "android_client_info": {
+          "package_name": "com.veristayv2.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9F7g_JEWEuVjTBfQD9L78ZxXVVOaINO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

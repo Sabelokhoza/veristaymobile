@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VeriStay</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_applications">Applications</string>
+    <string name="nav_payments">Payments</string>
+    <string name="nav_maintenance">Maintenance</string>
+    <string name="nav_announcements">Announcements</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
