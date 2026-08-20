@@ -12,7 +12,9 @@ public interface ApiService {
     @POST("Auth/login")
     Call<Models.ApiResponse<Models.LoginResponse>> login(
             @Body Models.LoginRequest body);
-
+    @GET("RentPayment/get-receipt")
+    Call<Models.ApiResponse<String>> getReceipt(
+            @Query("id") int paymentId);
     // Get all notifications for user
     @GET("Notifications/user/{userId}")
     Call<Models.ApiResponse<List<Models.AppNotification>>> getUserNotifications(
@@ -59,7 +61,7 @@ public interface ApiService {
 
     @PATCH("RentPayment/mark-paid")
     Call<Models.ApiResponse<Models.RentPayment>> markRentPaid(
-            @Body MarkRentPaidDto body);
+            @Body int body);
 
     class MarkRentPaidDto {
         public int    rentPaymentId;

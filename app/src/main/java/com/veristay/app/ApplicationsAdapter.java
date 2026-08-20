@@ -94,7 +94,7 @@ public class ApplicationsAdapter
                 break;
 
             case 4: // Withdrawn
-                holder.tvStatus.setText("Withdrawn");
+                holder.tvStatus.setText("✅ Accepted");
                 holder.tvStatus.setBackgroundColor(Color.parseColor("#F3F4F6"));
                 holder.tvStatus.setTextColor(Color.parseColor("#374151"));
                 setStatusStyle(holder, "📋", "#9CA3AF", "#F3F4F6");
