@@ -14,12 +14,14 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "BASE_URL", "\"https://veristay-platform-api.onrender.com/api/\"")
+        buildConfigField("String", "BASE_URL", "\"https://veristay-platform-api-div6.onrender.com/api/\"")
     }
+
+
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://veristay-platform-api.onrender.com/api/\"")
+            buildConfigField("String", "BASE_URL", "\"https://veristay-platform-api-div6.onrender.com/api/\"")
         }
         release {
             isMinifyEnabled = false
@@ -27,7 +29,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://veristay-platform-api.onrender.com/api/\"")
+            buildConfigField("String", "BASE_URL", "\"https://veristay-platform-api-div6.onrender.com/api/\"")
         }
     }
 
