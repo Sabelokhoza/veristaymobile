@@ -19,6 +19,21 @@ public class VeriStayFirebaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "New FCM token: " + token);
         SessionManager session = new SessionManager(getApplicationContext());
         session.saveFcmToken(token);
+
+        // Firebase rotates tokens; the backend must get the new one or every push to
+        // this device fails until the app is reopened.
+        String userId = session.getUserId();
+        if (userId == null || userId.isEmpty()) return;
+
+        try {
+            retrofit2.Response<Models.ApiResponse<Boolean>> response =
+                    RetrofitClient.getInstance(session).getApiService()
+                            .updateFcmToken(new ApiService.UpdateFcmTokenDto(userId, token))
+                            .execute();
+            Log.d(TAG, "Refreshed FCM token sent to backend: " + response.code());
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to send refreshed FCM token: " + e.getMessage());
+        }
     }
 
     @Override
@@ -56,13 +71,6 @@ public class VeriStayFirebaseMessagingService extends FirebaseMessagingService {
                 new NotificationHelper(getApplicationContext());
         int id = new Random().nextInt(10000);
         dispatchNotification(helper, type, title, message, id);
-
-        NotificationStore.save(getApplicationContext(), title, message, type);
-
-        NotificationHelper helper_ = new NotificationHelper(getApplicationContext());
-        int id_ = new Random().nextInt(10000);
-        dispatchNotification(helper_, type, title, message, id_);
-
     }
 
     // ── Infer type from title keywords ────────────────────────────
